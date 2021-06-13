@@ -1,0 +1,37 @@
+<html>
+<head><title>Random</title></head>
+<body style="background-color: black;color: yellow;">
+<center>
+    <form method="post">        
+Enter a Number: <input type="text" name="num"/><br>  <br>
+<button type="submit">Check</button>  
+</form> 
+<?php   
+    if($_POST)  
+    {   
+        $num = $_POST['num']; 
+        $n_num = $num;
+        $rev_num = 0;
+        $sum = 0;
+        $rem = 0;
+        while($num > 1)
+        {
+            $rem = $num % 10;
+            $sum += $rem;
+            $rev_num = $rev_num * 10 + $rem;
+            $num = (int)$num / 10;
+        }
+        echo "The sum of the digits of given number is $n_num is $sum"; 
+        echo "</br>";
+        if($n_num == $rev_num){  
+            echo "The given number $n_num is Palindrome";     
+        }else{  
+            echo "The given number $n_num is not a Palindrome";   
+        }  
+}     
+      ?> 
+</center>
+</body>
+</html>
+
+
